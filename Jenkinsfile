@@ -50,13 +50,13 @@ pipeline {
  
             }
         }
- stage('Run Docker container on local hosts') {
+ //stage('Run Docker container on local hosts') {
              
-            steps {
-                sh "docker run -d -p 8003:8080 techiev/samplewebapp"
+            //steps {
+                //sh "docker run -d -p 8003:8080 techiev/samplewebapp"
  
-            }
-        }
+            //}
+        // }
     }
 	}
     
