@@ -3,7 +3,7 @@ pipeline {
 	
 	  tools
     {
-       maven "Maven"
+       maven "MAVEN"
     }
  stages {
       stage('checkout') {
@@ -13,7 +13,7 @@ pipeline {
              
           }
         }
-	 stage('Execute Maven') {
+	 stage('Execute MAVEN') {
            steps {
              
                 sh 'mvn package'             
@@ -50,10 +50,10 @@ pipeline {
  
             }
         }
- stage('Run Docker container on remote hosts') {
+ stage('Run Docker container on local hosts') {
              
             steps {
-                sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8003:8080 nikhilnidhi/samplewebapp"
+                sh "docker run -d -p 8003:8080 nikhilnidhi/samplewebapp"
  
             }
         }
