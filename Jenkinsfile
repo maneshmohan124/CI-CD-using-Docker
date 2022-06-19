@@ -24,8 +24,8 @@ pipeline {
   stage('Docker Build and Tag') {
            steps {
               
-                sh 'docker build -t samplewebapp:latest .' 
-                sh 'docker tag samplewebapp techiev/samplewebapp:latest'
+                sudo sh 'docker build -t samplewebapp:latest .' 
+                sudo sh 'docker tag samplewebapp techiev/samplewebapp:latest'
                 //sh 'docker tag samplewebapp nikhilnidhi/samplewebapp:$BUILD_NUMBER'
                
           }
@@ -46,14 +46,14 @@ pipeline {
              
             steps 
 			{
-                sh "docker run -d -p 8003:8080 nikhilnidhi/samplewebapp"
+                sudo sh "docker run -d -p 8003:8080 techiev/samplewebapp"
  
             }
         }
  stage('Run Docker container on local hosts') {
              
             steps {
-                sh "docker run -d -p 8003:8080 nikhilnidhi/samplewebapp"
+                sudo sh "docker run -d -p 8003:8080 techiev/samplewebapp"
  
             }
         }
