@@ -42,7 +42,7 @@ pipeline {
           //}
         //}
      
-      stage('Run Docker container on Jenkins Agent') {
+      stage('Run Docker container on Jenkins host') {
              
             steps 
 			{
